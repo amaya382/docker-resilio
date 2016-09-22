@@ -1,0 +1,12 @@
+version: "2"
+services:
+  resilio:
+    image: amaya382/resilio:latest
+    # ports:
+      # - "8080:80"
+    volumes:
+      - "${PWD}/rslsync.conf:/etc/rslsync.conf"
+      - "${PWD}/rslsync.log:/var/log/rslsync.log"
+      - "${PWD}/settings/:/settings/"
+      - "/path/to/sync/root/:/resilio/"
+    restart: always
